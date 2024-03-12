@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Web App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<!-- Profile Icon -->
+<div class="profile-icon" onclick="toggleProfileMenu()">
+    <img src="images.png" alt="Profile Icon">
+</div>
+
+<!-- Profile Menu -->
+<div class="profile-menu" id="profileMenu">
+    <p>Welcome, <span id="username">Username</span>!</p>
+    <a href="#">Change Password</a>
+    <a href="#" id="logoutLink">Logout</a>
+</div>
+
+<body>
+  
+    
+    <div class="banner">
+        <h1>SAFELY</h1>
+    </div>
+    
+
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a href="chatroom.html">Chat Box</a></li>
+            <li><a href="findme.html">Find Me</a></li>
+            <li><a href="tips.html">Tips</a></li>
+        </ul>
+    </nav>
+  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEPkl-59i5iTwtELnc-zpvz8vCVvFCDM0&callback=initMap" async defer></script>
+</head>
+<body>
+
+<!-- Display Map -->
+<div id="map" style="height: 400px;"></div>
+
+<!-- Button to Get Location -->
+<button onclick="getLocation()">Get My Location</button>
+
+<script>
+    let map;
+
+    function initMap() {
+    
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 51.509865, lng: -0.118092 },
+            zoom: 10
+        });
+    }
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    const userLocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    // Center the map on the user's location
+                    map.setCenter(userLocation);
+
+                    // Add a marker at the user's location
+                    const marker = new google.maps.Marker({
+                        position: userLocation,
+                        map: map,
+                        title: 'Your Location'
+                    });
+
+                    // Log the user's location (you can store it in a database for tracking)
+                    console.log('User Location:', userLocation);
+                },
+                function (error) {
+                    // Handle geolocation errors
+                    console.error('Error getting location:', error.code, error.message);
+                    alert('Error getting location. Please try again.');
+                }
+            );
+        } else {
+            // Geolocation is not supported by the browser
+            console.error('Geolocation is not supported by your browser');
+            alert('Geolocation is not supported by your browser.');
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Web App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+
+
+<div class="profile-icon" onclick="toggleProfileMenu()">
+    <img src="images.png" alt="Profile Icon">
+</div>
+
+
+<div class="profile-menu" id="profileMenu">
+    <p>Welcome, <span id="username">Username</span>!</p>
+    <a href="#">Change Password</a>
+    <a href="#">Logout</a>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  
+    
+    <div class="banner">
+        <h1>SAFELY</h1>
+    </div>
+
+    <div class="profile-icon" onclick="toggleProfileMenu()">
+        <img src="images.png" alt="Profile Icon">
+    </div>
+
+
+    <div class="profile-menu" id="profileMenu">
+        <p>Welcome, <span id="username">Username</span>!</p>
+        <a href="#">Change Password</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a href="chatroom.html">Chat Box</a></li>
+            <li><a href="findme.html">Find Me</a></li>
+            <li><a href="tips.html">Tips</a></li>
+        </ul>
+    </nav>
+
+    <!-- Emergency Helplines Section -->
+    <section id="emergency" class="box">
+        <h2>Emergency Helplines</h2>
+        <div class="helpline-box">
+            <a href="tel:999">Call 999</a>
+        </div>
+        <div class="helpline-box">
+            <a href="tel:0800 027 1234">Womans Aid Phone Number</a>
+        </div>
+        <div class="helpline-box">
+            <a href="tel:0333 335 0026">Strut Safe Phone Number</a>
+        </div>
+    </section>
+
+    <!-- Emergency Contacts Section -->
+    <section id="emergency-contacts" class="box">
+        <h2>Emergency Contacts</h2>
+        <!-- Form to Add Emergency Contacts -->
+        <form id="addContactForm">
+            <label for="contactName">Contact Name:</label>
+            <input type="text" id="contactName" placeholder="Enter contact name" required>
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" placeholder="Enter contact number" required>
+            <button id="btn" type="button" onclick="addEmergencyContact(event)">Add Contact</button>
+        </form>
+        <!-- Display Emergency Contacts -->
+        <div id="contactList" style="text-align: center; margin: 0 auto" class="contact-list"></div>
+    </section>
+
+<script src="emergency.js"></script>
+<!-- <script src="profile.js" ></script> -->
+
+</body>
+
+
+</html>
+
+

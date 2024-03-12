@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Safety App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="banner">
+        <h1>SAFELY</h1>
+    </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a href="chatroom.html">Chat Box</a></li>
+            <li><a href="findme.html">Find Me</a></li>
+            <li><a href="tips.html">Tips</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container" >
+        <h2 style="text-align:center">Women's Safety App</h2>
+
+        <!-- Welcome Message -->
+        <div id="welcomeMessage" style="display: none;">
+            <h3>Welcome, <span id="userFullName"></span>!</h3>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" onsubmit="authenticate(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+            <!-- New User Sign Up Link -->
+            <p style="text-align: left;" id="signUpLink">New User? <a href="signup.html">Sign Up</a></p>
+        </form>
+
+        <div id="emergencyContactSection" style="display: none; padding: 20px; border: 1px solid #ccc; border-radius: 5px; margin-top: 20px;">
+            <label for="emergencyContact" style="display: block; margin-bottom: 10px;">Emergency Contact:</label>
+            <input type="tel" id="emergencyContact" placeholder="Enter emergency contact number" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        
+            <button onclick="sendAlert()" style="background-color: #a52a2a; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Send Alert</button>
+        </div>
+        
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
